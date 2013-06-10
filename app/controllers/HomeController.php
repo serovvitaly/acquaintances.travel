@@ -15,8 +15,17 @@ class HomeController extends BaseController {
 	|
 	*/
 
-	public function showWelcome()
+    public function getIndex()
+    {
+        echo 'Вы НЕ авторизованы <a href="/secure">авторизоваться</a>';
+        
+        return View::make('hello');
+    }
+    
+	public function getPrivateIndex()
 	{
+        echo 'Привет ' . Auth::user()->email . ' <a href="/secure/logout">выход</a>';
+        
 		return View::make('hello');
 	}
 

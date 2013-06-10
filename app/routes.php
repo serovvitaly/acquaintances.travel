@@ -11,7 +11,10 @@
 |
 */
 
-Route::get('/', function()
-{
-	return View::make('hello');
-});
+
+
+Route::controller('secure',  'AuthController');
+Route::controller('profile', 'ProfileController');
+
+Route::get('/', array('before' => 'guest', 'uses' => 'HomeController@getIndex'));
+Route::get('/', array('before' => 'auth',  'uses' => 'HomeController@getPrivateIndex'));
