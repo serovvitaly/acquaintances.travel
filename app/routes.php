@@ -20,6 +20,6 @@ Route::get('home',  'HomeController@getHome');
 Route::controller('secure',  'AuthController');
 
 
-Route::get('/', array('before' => 'guest', 'uses' => 'HomeController@getIndex'));
-//Route::get('/', array('before' => 'auth',  'uses' => 'HomeController@getPrivateIndex'));
+//Route::get('/', array('before' => 'guest', 'uses' => 'HomeController@getIndex'));
+Route::get('/', array('before' => 'auth',  'uses' => 'HomeController@getIndex'));
 
