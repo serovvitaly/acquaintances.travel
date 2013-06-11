@@ -11,10 +11,15 @@
 |
 */
 
+Route::group(array('before' => 'auth'), function(){
+    Route::controller('profile', 'ProfileController');
+});
 
+Route::get('home',  'HomeController@getHome');
 
 Route::controller('secure',  'AuthController');
-Route::controller('profile', 'ProfileController');
+
 
 Route::get('/', array('before' => 'guest', 'uses' => 'HomeController@getIndex'));
-Route::get('/', array('before' => 'auth',  'uses' => 'HomeController@getPrivateIndex'));
+//Route::get('/', array('before' => 'auth',  'uses' => 'HomeController@getPrivateIndex'));
+

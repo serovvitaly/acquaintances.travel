@@ -22,14 +22,15 @@
     </div>
   </div>
   <div class="span9">
-    
-    <div class="tab" id="profile-adding" style="display: none;">
-      Добавить путешествие
-    </div>
-    <div class="tab" id="profile-index">
+    <div class="hider" id="profile-index">
       @include('base.profile.tabs.start')
+    </div>
+    <div class="hider" id="profile-adding" style="display: none;">
+      @include('base.profile.tabs.trip')
     </div>
   </div>
 </div>
+
+@include('base.profile.templates')
 
 @stop
