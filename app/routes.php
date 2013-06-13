@@ -11,15 +11,39 @@
 |
 */
 
-Route::group(array('before' => 'auth'), function(){
-    Route::controller('profile', 'ProfileController');
-});
+//Route::controller('/', 'ProfileController');
+
+Route::controller('message',  'MessageController');
+
+Route::controller('secure',  'AuthController');
 
 Route::get('home',  'HomeController@getHome');
+
+Route::get('/{id}',  'ProfileController@getPerson')->where('id', '[0-9]+');
+
+Route::group(array('before' => 'auth'), function(){
+    Route::controller('message',  'MessageController');
+    Route::controller('/', 'ProfileController');
+    
+});
+
+
+
+/*
+
 
 Route::controller('secure',  'AuthController');
 
 
 //Route::get('/', array('before' => 'guest', 'uses' => 'HomeController@getIndex'));
-Route::get('/', array('before' => 'auth',  'uses' => 'HomeController@getIndex'));
+Route::get('/', array('before' => 'auth',  'uses' => 'ProfileController@getIndex'));
 
+Route::get('/{id}',  'ProfileController@getPerson')->where('id', '[0-9]+');
+
+//Route::get('searh',  'ProfileController@getSearh');
+
+Route::group(array('before' => 'auth'), function(){
+    Route::controller('/', 'ProfileController');
+});
+
+*/

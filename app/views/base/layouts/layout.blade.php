@@ -9,7 +9,7 @@
   <link rel="stylesheet" type="text/css" href="/skins/base/css/common.css">
   <link rel="stylesheet" type="text/css" href="/skins/base/css/style.css">
 </head>
-<body class="font_medium">
+<body>
 <!-- base_layout -->
 @section('layout')
 
@@ -20,6 +20,9 @@
   
   <script type="text/javascript" src="/packages/jquery/plugins/jquery-tmpl/jquery.tmpl.min.js"></script>
   <script type="text/javascript" src="/packages/knockout/knockout-2.2.1.js"></script>
+  
+  <script type="text/javascript" src="/packages/jquery/plugins/hcsticky/jquery.hcsticky-min.js"></script>
+  <script type="text/javascript" src="/packages/jquery/plugins/ricostacruz/jquery.transit.min.js"></script>
   
   <script type="text/javascript" src="/skins/base/js/common.js"></script>
 </body>

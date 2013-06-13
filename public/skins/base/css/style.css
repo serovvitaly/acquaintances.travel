@@ -2,6 +2,11 @@
 
 }
 
+ul{
+    list-style: none;
+    margin: 0;
+}
+
 .btn{
   /*  font-size: 13px;
     line-height: 13px;
@@ -55,7 +60,8 @@ input[type="color"],
     height: 20px;
     padding: 4px 6px;
     margin-bottom: 10px;
-    font-size: 14px;
+    font-size: 12px;
+    font-family: Lucida Grande, Arial, tahoma, verdana, sans-serif;
     line-height: 20px;
     color: #555555;
     vertical-align: middle;
@@ -136,3 +142,78 @@ input[type="color"]:focus,
 .rout-component a.deleter:hover{
     color: #585858;
 }
+
+
+/* -- profile -- */
+.profile-sidebar{
+    margin: 20px 0;
+}
+.profile-image{
+    height: 200px;
+    overflow: hidden;
+}
+.profile-footer{
+    border-top: 1px solid #E0E0E0;
+    text-align: center;
+    padding: 10px 0 20px;
+    margin-top: 30px;
+}
+.profile-footer a{
+    padding: 0 5px;
+    font-size: 11px;
+    font-family: tahoma;
+}
+/* -- /profile -- */
+
+/* -- person -- */
+.person-image{
+    text-align: right;
+    height: 200px;
+    overflow: hidden;
+}
+.person-header section{
+    text-align: right;
+}
+.person-actions .extra{
+    margin: 10px 0;
+}
+.person-actions .extra li{
+    display: inline-block;
+}
+/* -- /person -- */
+
+/* -- messages -- */
+#page-messages{
+    height: 600px; 
+}
+#page-messages .ms-col{
+    height: 100%;
+}
+#page-messages .message-box{
+    height: 100%; 
+}
+#page-messages .message-input{
+    margin-top: -130px;
+    padding: 5px;
+    background: #EFF8FC;
+    border: 1px solid #D2ECF7;
+}
+#page-messages .message-input textarea{
+    width: 376px;
+    height: 70px;
+    border-color: #B9D7E4;
+    margin-bottom: 5px;
+}
+#page-messages .message-input .msi-bottom{
+    text-align: right;
+}
+#page-messages .message-input .msi-bottom span{
+    padding-right: 5px;
+    font-size: 11px;
+    font-family: tahoma;
+    color: #18556F;
+}
+#page-messages .msc-list{
+    height: 100%; 
+}
+/* -- /messages -- */
