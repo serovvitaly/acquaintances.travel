@@ -22,7 +22,8 @@ Route::get('home',  'HomeController@getHome');
 Route::get('/{id}',  'ProfileController@getPerson')->where('id', '[0-9]+');
 
 Route::group(array('before' => 'auth'), function(){
-    Route::controller('message',  'MessageController');
+    Route::controller('search',  'SearchController');
+    Route::controller('message', 'MessageController');
     Route::controller('/', 'ProfileController');
     
 });

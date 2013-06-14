@@ -52,7 +52,7 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
     
     public function messages()
     {
-        return $htis->hasMany('message', 'from_id');
+        return $this->hasMany('Message', 'from_id');
     }
 
 }

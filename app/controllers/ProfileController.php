@@ -35,7 +35,9 @@ class ProfileController extends BaseController {
     
     public function getMessages()
     {
-        $this->layout->content = View::make('base.profile.pages.messages');
+        $this->layout->content = View::make('base.profile.pages.messages', array(
+            'messages' => Auth::user()->messages()
+        ));
     }
     
     public function getSympathy()

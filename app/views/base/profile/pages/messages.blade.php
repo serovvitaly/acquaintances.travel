@@ -1,6 +1,12 @@
 <div class="row-fluid" id="page-messages">
   <div class="span7 ms-col">
-    <div class="message-box">список</div>
+    <div class="message-box">
+    @foreach ($messages as $msg)
+      <div class="msg-item">
+        {{$msg.message}}
+      </div>
+    @endforeach
+    </div>
     <div class="message-input" id="message-send-form">
       <textarea class="msg" cols="" rows="" placeholder="Введите текст сообщения"></textarea>
       <div class="msi-bottom">

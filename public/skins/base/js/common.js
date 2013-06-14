@@ -19,6 +19,30 @@ $(function(){
 })(jQuery);
 
 
+function doSearch(){
+    var fields = $('#uni-deskbar :input');
+    
+    var data = {};
+    
+    fields.each(function(index, item){
+        item = $(item);
+        data[item.attr('name')] = item.val();
+    });
+    
+    console.log(data);
+    
+    $.ajax({
+        url: '/search/do',
+        type: 'POST',
+        dataType: 'json',
+        data: data,
+        success: function(data){
+            //
+        }
+    });
+}
+
+
 function messageSend(){
     
     var message = $('#message-send-form textarea.msg').val();
