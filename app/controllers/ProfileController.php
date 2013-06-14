@@ -64,7 +64,7 @@ class ProfileController extends BaseController {
         $person = User::find($id);
         
         
-        if ($person->id == Auth::user()->id) {
+        if ($person AND $person->id == Auth::user()->id) {
             $this->getProfile();
         }
         elseif ($person) {

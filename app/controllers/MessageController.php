@@ -7,12 +7,18 @@ class MessageController extends BaseController {
         return false;
     }
     
-    public function getEESend()
+    public function getSender()
     {        
-        return View::make('hello'); 
+        $msg = new Message;
+            
+        $msg->from_id = 1;
+        $msg->to_id   = 2;
+        $msg->message = '44444';
+        
+        $msg->save();
     }
     
-    public function getSend()
+    public function postSend()
     {   
         $user = Auth::user();
         
@@ -22,19 +28,19 @@ class MessageController extends BaseController {
             $to_id = Input::get('to');
             $message = Input::get('message');
             
-            //$message = new Message;
+            $msg = new Message;
             
-            //$message->from_id = $from_id;
-            //$message->to_id   = $to_id;
-            //$message->message = $message;
+            $msg->from_id = $from_id;
+            $msg->to_id   = $to_id;
+            $msg->message = $message;
             
-            $msg = Message::create(array(
+           /* $msg = Message::create(array(
                 'from_id' => $from_id,
                 'to_id'   => $to_id,
                 'message' => $message
-            ));
+            ));*/
             
-            //$message->save();
+            $msg->save();
             
             $result = array(
                 'status' => 1

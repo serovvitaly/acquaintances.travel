@@ -20,13 +20,23 @@ $(function(){
 
 
 function messageSend(){
+    
+    var message = $('#message-send-form textarea.msg').val();
+    $('#message-send-form textarea.msg').val('');
+    
+    var msg = $('<div/>');
+    msg.attr('class', 'msg-item');
+    msg.html(message);
+    msg.appendTo('#page-messages .message-box');
+    
+    
     $.ajax({
         url: '/message/send',
         type: 'POST',
         dataType: 'json',
         data: {
             to: 1,
-            message: $('#message-send-form textarea.msg').val()
+            message: message 
         },
         success: function(data){
             console.log(data);
